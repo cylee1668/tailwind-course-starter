@@ -9,12 +9,22 @@
   <script defer src="./assets/fontawesome/js/solid.min.js"></script>
   <script>
     window.onload = () => {
+
       const mobileMenuIcon = document.getElementById("mobile-menu-button");
       mobileMenuIcon.addEventListener("click", () => {
         if (mobileMenuIcon.classList.contains("open")) {
           mobileMenuIcon.classList.remove("open");
         } else {
           mobileMenuIcon.classList.add("open");
+        }
+      })
+
+      const ticketsMenuItem = document.getElementById("ticket-menu-item");
+      ticketsMenuItem.addEventListener("click", () => {
+        if (ticketsMenuItem.classList.contains("open")) {
+          ticketsMenuItem.classList.remove("open");
+        } else {
+          ticketsMenuItem.classList.add("open");
         }
       })
     }
@@ -49,18 +59,33 @@
           </button>
 
           <!-- Mobile menu -->
-          <div class="absolute top-[62px] bg-linear-to-r from-rose-500 to-pink-500 w-full left-0 peer-open:block peer-open:opacity-100 opacity-0 hidden">
-            
-            <div class="relative flex h-full cursor-pointer items-center justify-center">
+          <div
+            class="absolute top-[62px] bg-linear-to-r from-rose-500 to-pink-500 w-full left-0 peer-open:block peer-open:opacity-100 opacity-0 hidden">
+
+            <div
+              class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10">
               <span>Home</span>
             </div>
-            <div class="relative flex h-full cursor-pointer items-center justify-center">
+            <div
+              class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10">
               <span>Lineup</span>
             </div>
-            <div class="relative flex h-full cursor-pointer items-center justify-center">
-              <span>Ticket</span>
+            <div id="ticket-menu-item"
+              class="group relative h-full cursor-pointer items-center justify-center font-bold text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10">
+              <div class="p-4 text-center font-bold">Tickets</div>
+              <div class="hidden group-open:block">
+                <div
+                  class="relative p-4 text-center text-pink-200 hover:text-zinc-200 hover:bg-white/5 transition-colors ease-in-out">
+                  <span>Single day ticket</span>
+                </div>
+                <div
+                  class="relative p-4 text-center text-pink-200 hover:text-zinc-200 hover:bg-white/5 transition-colors ease-in-out">
+                  <span>7 day ticket</span>
+                </div>
+              </div>
             </div>
-            <div class="relative flex h-full cursor-pointer items-center justify-center">
+            <div
+              class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10">
               <span>Support</span>
             </div>
           </div>
