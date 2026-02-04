@@ -867,42 +867,42 @@
     }
   }
   .dark\:\!hidden {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       display: none !important;
     }
   }
   .dark\:\!inline {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       display: inline !important;
     }
   }
   .dark\:hidden {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       display: none;
     }
   }
   .dark\:inline {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       display: inline;
     }
   }
   .dark\:bg-zinc-200 {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       background-color: var(--color-zinc-200);
     }
   }
   .dark\:bg-zinc-900 {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       background-color: var(--color-zinc-900);
     }
   }
   .dark\:text-zinc-200 {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       color: var(--color-zinc-200);
     }
   }
   .dark\:text-zinc-900 {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       color: var(--color-zinc-900);
     }
   }

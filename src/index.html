@@ -28,6 +28,16 @@
         }
       });
 
+
+      const darkModeToggle = document.getElementById("dark-mode-toggle");
+      darkModeToggle.addEventListener("click", () => {
+        if (document.body.classList.contains("dark")) {
+          document.body.classList.remove("dark");
+        } else {
+          document.body.classList.add("dark");
+        }
+      });
+
       const previousButton = document.getElementById("previous");
       const nextButton = document.getElementById("next");
       const carousel = document.getElementById("carousel");
@@ -41,15 +51,28 @@
         const itemWidth = carousel.getElementsByTagName("div")[0].clientWidth;
         carousel.scrollLeft = carousel.scrollLeft + itemWidth;
       });
+
     };
   </script>
   <title>Document</title>
 </head>
 
 <body>
-  <main>
+  <main class="bg-zinc-200 dark:bg-zinc-900">
     <header class="text-zinc-200">
-      <nav class="sticky flex top-0 bg-linear-to-r from-rose-500 to-pink-500">
+      <button id="dark-mode-toggle"
+        class="fixed top-24 right-0 inline-block w-12 cursor-pointer rounded-l-lg bg-zinc-900 dark:bg-zinc-200 text-zinc-200 dark:text-zinc-900 p-2 text-3xl">
+        <span class="dark:hidden">
+          <i class="fa-solid fa-sun"></i>
+        </span>
+
+        <span class="hidden dark:inline">
+          <i class="fa-solid fa-moon"></i>
+        </span>
+
+      </button>
+
+      <nav class="sticky z-10 flex top-0 bg-linear-to-r from-rose-500 to-pink-500">
         <div class="flex items-center p-2 gap-2">
           <img src="./assets/images/logo-inverted.png" width="50" alt="" />
           <div class="text-2xl font-bold">
@@ -173,7 +196,7 @@
     </header>
 
     <!-- body -->
-    <div class="max-w-screen-lg mx-auto mt-20">
+    <div class="max-w-screen-lg mx-auto mt-20 text-zinc-900 dark:text-zinc-200">
       <h2>
         Headliners
       </h2>
